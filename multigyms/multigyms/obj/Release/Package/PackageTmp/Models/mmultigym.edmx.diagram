@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7747d9b1a3be46b3952cab4f849a78a4" Name="Diagram1">
+        <EntityTypeShape EntityType="MultigymModel.MG_Ciudades" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Disciplinas" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Empresa" Width="1.5" PointX="3.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Gym" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Gym_Disc" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Gym_Serv" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Pagos" Width="1.5" PointX="8.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Persona" Width="1.5" PointX="6" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Planes" Width="1.5" PointX="3.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Reviews" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Servicios" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Visitas" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Gym_Ciudades" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Gym_Disc" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Persona_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Gym_Disc_Gym" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Gym_Serv_Gym" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Reviews_Gym" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Visitas_Gym" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Gym_Serv" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Pagos_Persona" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Persona_Planes" ManuallyRouted="false" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Visitas_Persona" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

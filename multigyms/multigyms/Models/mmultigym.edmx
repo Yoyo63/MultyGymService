@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MultigymModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MG_Ciudades">
+          <Key>
+            <PropertyRef Name="Id_Ciudad" />
+          </Key>
+          <Property Name="Id_Ciudad" Type="int" Nullable="false" />
+          <Property Name="Ciudad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodigoPais" Type="nchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_Disciplinas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Imagen" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersContacto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Celular" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="Passw" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_Gym">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Ciudad" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Referencias" Type="nvarchar" MaxLength="250" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+          <Property Name="Celular" Type="nvarchar" MaxLength="50" />
+          <Property Name="Web" Type="nvarchar" MaxLength="100" />
+          <Property Name="Facebook" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Lat" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Lon" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Ubicacion" Type="geography" />
+          <Property Name="Creditos" Type="smallint" Nullable="false" />
+          <Property Name="ImgLogo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Img1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Img2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Img3" Type="nvarchar" MaxLength="50" />
+          <Property Name="HorarioLV" Type="nvarchar" MaxLength="50" />
+          <Property Name="HorarioS" Type="nvarchar" MaxLength="50" />
+          <Property Name="HorarioDF" Type="nvarchar" MaxLength="50" />
+          <Property Name="FecActivacion" Type="date" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Instagram" Type="nvarchar" MaxLength="100" />
+          <Property Name="Passw" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReviewCount" Type="int" />
+          <Property Name="ReviewAverage" Type="decimal" Precision="3" Scale="2" />
+        </EntityType>
+        <EntityType Name="MG_Gym_Disc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Gym" Type="int" Nullable="false" />
+          <Property Name="Id_Disciplina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_Gym_Serv">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Gym" Type="int" Nullable="false" />
+          <Property Name="Id_Servicio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_Pagos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_persona" Type="int" Nullable="false" />
+          <Property Name="FecPago" Type="date" Nullable="false" />
+          <Property Name="Monto" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_Persona">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="20" />
+          <Property Name="Passw" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="FecNacimiento" Type="date" Nullable="false" />
+          <Property Name="Celular" Type="nvarchar" MaxLength="12" />
+          <Property Name="FecIngreso" Type="date" Nullable="false" />
+          <Property Name="Id_Plan" Type="int" Nullable="false" />
+          <Property Name="CredDisponible" Type="smallint" Nullable="false" />
+          <Property Name="Id_empresa" Type="int" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Token" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="MG_Planes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Precio" Type="smallint" Nullable="false" />
+          <Property Name="Creditos" Type="smallint" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mg_reviews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Persona" Type="int" Nullable="false" />
+          <Property Name="Id_Gym" Type="int" Nullable="false" />
+          <Property Name="FecReview" Type="smalldatetime" Nullable="false" />
+          <Property Name="Calificacion" Type="tinyint" Nullable="false" />
+          <Property Name="Review" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_Servicios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Imagen" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MG_Visitas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Persona" Type="int" Nullable="false" />
+          <Property Name="Id_Gym" Type="int" Nullable="false" />
+          <Property Name="FecVisita" Type="smalldatetime" />
+          <Property Name="CredUsado" Type="smallint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__mg_review__Id_Gy__619B8048">
+          <End Role="MG_Gym" Type="Self.MG_Gym" Multiplicity="1" />
+          <End Role="mg_reviews" Type="Self.mg_reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Gym">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mg_reviews">
+              <PropertyRef Name="Id_Gym" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__mg_review__Id_Pe__60A75C0F">
+          <End Role="MG_Persona" Type="Self.MG_Persona" Multiplicity="1" />
+          <End Role="mg_reviews" Type="Self.mg_reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="mg_reviews">
+              <PropertyRef Name="Id_Persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Gym_Ciudades">
+          <End Role="MG_Ciudades" Type="Self.MG_Ciudades" Multiplicity="1" />
+          <End Role="MG_Gym" Type="Self.MG_Gym" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Ciudades">
+              <PropertyRef Name="Id_Ciudad" />
+            </Principal>
+            <Dependent Role="MG_Gym">
+              <PropertyRef Name="Id_Ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Gym_Disc">
+          <End Role="MG_Disciplinas" Type="Self.MG_Disciplinas" Multiplicity="1" />
+          <End Role="MG_Gym_Disc" Type="Self.MG_Gym_Disc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Disciplinas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Gym_Disc">
+              <PropertyRef Name="Id_Disciplina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Gym_Disc_Gym">
+          <End Role="MG_Gym" Type="Self.MG_Gym" Multiplicity="1" />
+          <End Role="MG_Gym_Disc" Type="Self.MG_Gym_Disc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Gym">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MG_Gym_Disc">
+              <PropertyRef Name="Id_Gym" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Gym_Serv">
+          <End Role="MG_Servicios" Type="Self.MG_Servicios" Multiplicity="1" />
+          <End Role="MG_Gym_Serv" Type="Self.MG_Gym_Serv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Servicios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Gym_Serv">
+              <PropertyRef Name="Id_Servicio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Gym_Serv_Gym">
+          <End Role="MG_Gym" Type="Self.MG_Gym" Multiplicity="1" />
+          <End Role="MG_Gym_Serv" Type="Self.MG_Gym_Serv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Gym">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MG_Gym_Serv">
+              <PropertyRef Name="Id_Gym" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Pagos_Persona">
+          <End Role="MG_Persona" Type="Self.MG_Persona" Multiplicity="1" />
+          <End Role="MG_Pagos" Type="Self.MG_Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Pagos">
+              <PropertyRef Name="Id_persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Persona_Empresa">
+          <End Role="MG_Empresa" Type="Self.MG_Empresa" Multiplicity="0..1" />
+          <End Role="MG_Persona" Type="Self.MG_Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Persona">
+              <PropertyRef Name="Id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Persona_Planes">
+          <End Role="MG_Planes" Type="Self.MG_Planes" Multiplicity="1" />
+          <End Role="MG_Persona" Type="Self.MG_Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Planes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Persona">
+              <PropertyRef Name="Id_Plan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Visitas_Gym">
+          <End Role="MG_Gym" Type="Self.MG_Gym" Multiplicity="1" />
+          <End Role="MG_Visitas" Type="Self.MG_Visitas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Gym">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MG_Visitas">
+              <PropertyRef Name="Id_Gym" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Visitas_Persona">
+          <End Role="MG_Persona" Type="Self.MG_Persona" Multiplicity="1" />
+          <End Role="MG_Visitas" Type="Self.MG_Visitas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Visitas">
+              <PropertyRef Name="Id_Persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Chk_Credencial_Persona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="lorgioq1">
+          <Parameter Name="Login" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="MultigymModelStoreContainer">
+          <EntitySet Name="MG_Ciudades" EntityType="Self.MG_Ciudades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Disciplinas" EntityType="Self.MG_Disciplinas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Empresa" EntityType="Self.MG_Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Gym" EntityType="Self.MG_Gym" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Gym_Disc" EntityType="Self.MG_Gym_Disc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Gym_Serv" EntityType="Self.MG_Gym_Serv" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Pagos" EntityType="Self.MG_Pagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Persona" EntityType="Self.MG_Persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Planes" EntityType="Self.MG_Planes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mg_reviews" EntityType="Self.mg_reviews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Servicios" EntityType="Self.MG_Servicios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_Visitas" EntityType="Self.MG_Visitas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__mg_review__Id_Gy__619B8048" Association="Self.FK__mg_review__Id_Gy__619B8048">
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+            <End Role="mg_reviews" EntitySet="mg_reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__mg_review__Id_Pe__60A75C0F" Association="Self.FK__mg_review__Id_Pe__60A75C0F">
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+            <End Role="mg_reviews" EntitySet="mg_reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Gym_Ciudades" Association="Self.FK_MG_Gym_Ciudades">
+            <End Role="MG_Ciudades" EntitySet="MG_Ciudades" />
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Gym_Disc" Association="Self.FK_MG_Gym_Disc">
+            <End Role="MG_Disciplinas" EntitySet="MG_Disciplinas" />
+            <End Role="MG_Gym_Disc" EntitySet="MG_Gym_Disc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Gym_Disc_Gym" Association="Self.FK_MG_Gym_Disc_Gym">
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+            <End Role="MG_Gym_Disc" EntitySet="MG_Gym_Disc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Gym_Serv" Association="Self.FK_MG_Gym_Serv">
+            <End Role="MG_Servicios" EntitySet="MG_Servicios" />
+            <End Role="MG_Gym_Serv" EntitySet="MG_Gym_Serv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Gym_Serv_Gym" Association="Self.FK_MG_Gym_Serv_Gym">
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+            <End Role="MG_Gym_Serv" EntitySet="MG_Gym_Serv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Pagos_Persona" Association="Self.FK_MG_Pagos_Persona">
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+            <End Role="MG_Pagos" EntitySet="MG_Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Persona_Empresa" Association="Self.FK_MG_Persona_Empresa">
+            <End Role="MG_Empresa" EntitySet="MG_Empresa" />
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Persona_Planes" Association="Self.FK_MG_Persona_Planes">
+            <End Role="MG_Planes" EntitySet="MG_Planes" />
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Visitas_Gym" Association="Self.FK_MG_Visitas_Gym">
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+            <End Role="MG_Visitas" EntitySet="MG_Visitas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Visitas_Persona" Association="Self.FK_MG_Visitas_Persona">
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+            <End Role="MG_Visitas" EntitySet="MG_Visitas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MultigymModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MultigymEntities1" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="Chk_Credencial_Persona" ReturnType="Collection(Boolean)">
+            <Parameter Name="Login" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="MG_Ciudades" EntityType="MultigymModel.MG_Ciudades" />
+          <EntitySet Name="MG_Disciplinas" EntityType="MultigymModel.MG_Disciplinas" />
+          <EntitySet Name="MG_Empresa" EntityType="MultigymModel.MG_Empresa" />
+          <EntitySet Name="MG_Gym_Disc" EntityType="MultigymModel.MG_Gym_Disc" />
+          <EntitySet Name="MG_Gym_Serv" EntityType="MultigymModel.MG_Gym_Serv" />
+          <EntitySet Name="MG_Pagos" EntityType="MultigymModel.MG_Pagos" />
+          <EntitySet Name="MG_Persona" EntityType="MultigymModel.MG_Persona" />
+          <EntitySet Name="MG_Planes" EntityType="MultigymModel.MG_Planes" />
+          <EntitySet Name="mg_reviews" EntityType="MultigymModel.mg_reviews" />
+          <EntitySet Name="MG_Servicios" EntityType="MultigymModel.MG_Servicios" />
+          <EntitySet Name="MG_Visitas" EntityType="MultigymModel.MG_Visitas" />
+          <AssociationSet Name="FK_MG_Gym_Disc" Association="MultigymModel.FK_MG_Gym_Disc">
+            <End Role="MG_Disciplinas" EntitySet="MG_Disciplinas" />
+            <End Role="MG_Gym_Disc" EntitySet="MG_Gym_Disc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Persona_Empresa" Association="MultigymModel.FK_MG_Persona_Empresa">
+            <End Role="MG_Empresa" EntitySet="MG_Empresa" />
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Gym_Serv" Association="MultigymModel.FK_MG_Gym_Serv">
+            <End Role="MG_Servicios" EntitySet="MG_Servicios" />
+            <End Role="MG_Gym_Serv" EntitySet="MG_Gym_Serv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Pagos_Persona" Association="MultigymModel.FK_MG_Pagos_Persona">
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+            <End Role="MG_Pagos" EntitySet="MG_Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__mg_review__Id_Pe__60A75C0F" Association="MultigymModel.FK__mg_review__Id_Pe__60A75C0F">
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+            <End Role="mg_reviews" EntitySet="mg_reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Persona_Planes" Association="MultigymModel.FK_MG_Persona_Planes">
+            <End Role="MG_Planes" EntitySet="MG_Planes" />
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Visitas_Persona" Association="MultigymModel.FK_MG_Visitas_Persona">
+            <End Role="MG_Persona" EntitySet="MG_Persona" />
+            <End Role="MG_Visitas" EntitySet="MG_Visitas" />
+          </AssociationSet>
+          <EntitySet Name="MG_Gym" EntityType="MultigymModel.MG_Gym" />
+          <AssociationSet Name="FK_MG_Gym_Ciudades" Association="MultigymModel.FK_MG_Gym_Ciudades">
+            <End Role="MG_Ciudades" EntitySet="MG_Ciudades" />
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+          </AssociationSet>
+          <AssociationSet Name="FK__mg_review__Id_Gy__619B8048" Association="MultigymModel.FK__mg_review__Id_Gy__619B8048">
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+            <End Role="mg_reviews" EntitySet="mg_reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Gym_Disc_Gym" Association="MultigymModel.FK_MG_Gym_Disc_Gym">
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+            <End Role="MG_Gym_Disc" EntitySet="MG_Gym_Disc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Gym_Serv_Gym" Association="MultigymModel.FK_MG_Gym_Serv_Gym">
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+            <End Role="MG_Gym_Serv" EntitySet="MG_Gym_Serv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_Visitas_Gym" Association="MultigymModel.FK_MG_Visitas_Gym">
+            <End Role="MG_Gym" EntitySet="MG_Gym" />
+            <End Role="MG_Visitas" EntitySet="MG_Visitas" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="MG_Ciudades">
+          <Key>
+            <PropertyRef Name="Id_Ciudad" />
+          </Key>
+          <Property Name="Id_Ciudad" Type="Int32" Nullable="false" />
+          <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPais" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="MG_Gym" Relationship="MultigymModel.FK_MG_Gym_Ciudades" FromRole="MG_Ciudades" ToRole="MG_Gym" />
+        </EntityType>
+        <EntityType Name="MG_Disciplinas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Imagen" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_Gym_Disc" Relationship="MultigymModel.FK_MG_Gym_Disc" FromRole="MG_Disciplinas" ToRole="MG_Gym_Disc" />
+        </EntityType>
+        <EntityType Name="MG_Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersContacto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Passw" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK_MG_Persona_Empresa" FromRole="MG_Empresa" ToRole="MG_Persona" />
+        </EntityType>
+        <EntityType Name="MG_Gym_Disc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Gym" Type="Int32" Nullable="false" />
+          <Property Name="Id_Disciplina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MG_Disciplinas" Relationship="MultigymModel.FK_MG_Gym_Disc" FromRole="MG_Gym_Disc" ToRole="MG_Disciplinas" />
+          <NavigationProperty Name="MG_Gym" Relationship="MultigymModel.FK_MG_Gym_Disc_Gym" FromRole="MG_Gym_Disc" ToRole="MG_Gym" />
+        </EntityType>
+        <EntityType Name="MG_Gym_Serv">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Gym" Type="Int32" Nullable="false" />
+          <Property Name="Id_Servicio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MG_Servicios" Relationship="MultigymModel.FK_MG_Gym_Serv" FromRole="MG_Gym_Serv" ToRole="MG_Servicios" />
+          <NavigationProperty Name="MG_Gym" Relationship="MultigymModel.FK_MG_Gym_Serv_Gym" FromRole="MG_Gym_Serv" ToRole="MG_Gym" />
+        </EntityType>
+        <EntityType Name="MG_Pagos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_persona" Type="Int32" Nullable="false" />
+          <Property Name="FecPago" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Monto" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK_MG_Pagos_Persona" FromRole="MG_Pagos" ToRole="MG_Persona" />
+        </EntityType>
+        <EntityType Name="MG_Persona">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Passw" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FecNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Celular" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FecIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id_Plan" Type="Int32" Nullable="false" />
+          <Property Name="CredDisponible" Type="Int16" Nullable="false" />
+          <Property Name="Id_empresa" Type="Int32" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="Token" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_Empresa" Relationship="MultigymModel.FK_MG_Persona_Empresa" FromRole="MG_Persona" ToRole="MG_Empresa" />
+          <NavigationProperty Name="MG_Pagos" Relationship="MultigymModel.FK_MG_Pagos_Persona" FromRole="MG_Persona" ToRole="MG_Pagos" />
+          <NavigationProperty Name="mg_reviews" Relationship="MultigymModel.FK__mg_review__Id_Pe__60A75C0F" FromRole="MG_Persona" ToRole="mg_reviews" />
+          <NavigationProperty Name="MG_Planes" Relationship="MultigymModel.FK_MG_Persona_Planes" FromRole="MG_Persona" ToRole="MG_Planes" />
+          <NavigationProperty Name="MG_Visitas" Relationship="MultigymModel.FK_MG_Visitas_Persona" FromRole="MG_Persona" ToRole="MG_Visitas" />
+        </EntityType>
+        <EntityType Name="MG_Planes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Precio" Type="Int16" Nullable="false" />
+          <Property Name="Creditos" Type="Int16" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK_MG_Persona_Planes" FromRole="MG_Planes" ToRole="MG_Persona" />
+        </EntityType>
+        <EntityType Name="mg_reviews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Persona" Type="Int32" Nullable="false" />
+          <Property Name="Id_Gym" Type="Int32" Nullable="false" />
+          <Property Name="FecReview" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Calificacion" Type="Byte" Nullable="false" />
+          <Property Name="Review" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK__mg_review__Id_Pe__60A75C0F" FromRole="mg_reviews" ToRole="MG_Persona" />
+          <NavigationProperty Name="MG_Gym" Relationship="MultigymModel.FK__mg_review__Id_Gy__619B8048" FromRole="mg_reviews" ToRole="MG_Gym" />
+        </EntityType>
+        <EntityType Name="MG_Servicios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_Gym_Serv" Relationship="MultigymModel.FK_MG_Gym_Serv" FromRole="MG_Servicios" ToRole="MG_Gym_Serv" />
+        </EntityType>
+        <EntityType Name="MG_Visitas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Persona" Type="Int32" Nullable="false" />
+          <Property Name="Id_Gym" Type="Int32" Nullable="false" />
+          <Property Name="FecVisita" Type="DateTime" Precision="0" />
+          <Property Name="CredUsado" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK_MG_Visitas_Persona" FromRole="MG_Visitas" ToRole="MG_Persona" />
+          <NavigationProperty Name="MG_Gym" Relationship="MultigymModel.FK_MG_Visitas_Gym" FromRole="MG_Visitas" ToRole="MG_Gym" />
+        </EntityType>
+        <Association Name="FK_MG_Gym_Disc">
+          <End Type="MultigymModel.MG_Disciplinas" Role="MG_Disciplinas" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Gym_Disc" Role="MG_Gym_Disc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Disciplinas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Gym_Disc">
+              <PropertyRef Name="Id_Disciplina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Persona_Empresa">
+          <End Type="MultigymModel.MG_Empresa" Role="MG_Empresa" Multiplicity="0..1" />
+          <End Type="MultigymModel.MG_Persona" Role="MG_Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Persona">
+              <PropertyRef Name="Id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Gym_Serv">
+          <End Type="MultigymModel.MG_Servicios" Role="MG_Servicios" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Gym_Serv" Role="MG_Gym_Serv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Servicios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Gym_Serv">
+              <PropertyRef Name="Id_Servicio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Pagos_Persona">
+          <End Type="MultigymModel.MG_Persona" Role="MG_Persona" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Pagos" Role="MG_Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Pagos">
+              <PropertyRef Name="Id_persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__mg_review__Id_Pe__60A75C0F">
+          <End Type="MultigymModel.MG_Persona" Role="MG_Persona" Multiplicity="1" />
+          <End Type="MultigymModel.mg_reviews" Role="mg_reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="mg_reviews">
+              <PropertyRef Name="Id_Persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Persona_Planes">
+          <End Type="MultigymModel.MG_Planes" Role="MG_Planes" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Persona" Role="MG_Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Planes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Persona">
+              <PropertyRef Name="Id_Plan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Visitas_Persona">
+          <End Type="MultigymModel.MG_Persona" Role="MG_Persona" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Visitas" Role="MG_Visitas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MG_Visitas">
+              <PropertyRef Name="Id_Persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MG_Gym">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Ciudad" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Referencias" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Web" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lat" Type="Decimal" Precision="9" Scale="6" />
+          <Property Name="Lon" Type="Decimal" Precision="9" Scale="6" />
+          <Property Name="Ubicacion" Type="Geography" />
+          <Property Name="Creditos" Type="Int16" Nullable="false" />
+          <Property Name="ImgLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Img1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Img2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Img3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HorarioLV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HorarioS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HorarioDF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FecActivacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="Instagram" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Passw" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewCount" Type="Int32" />
+          <Property Name="ReviewAverage" Type="Decimal" Precision="3" Scale="2" />
+          <NavigationProperty Name="MG_Ciudades" Relationship="MultigymModel.FK_MG_Gym_Ciudades" FromRole="MG_Gym" ToRole="MG_Ciudades" />
+          <NavigationProperty Name="mg_reviews" Relationship="MultigymModel.FK__mg_review__Id_Gy__619B8048" FromRole="MG_Gym" ToRole="mg_reviews" />
+          <NavigationProperty Name="MG_Gym_Disc" Relationship="MultigymModel.FK_MG_Gym_Disc_Gym" FromRole="MG_Gym" ToRole="MG_Gym_Disc" />
+          <NavigationProperty Name="MG_Gym_Serv" Relationship="MultigymModel.FK_MG_Gym_Serv_Gym" FromRole="MG_Gym" ToRole="MG_Gym_Serv" />
+          <NavigationProperty Name="MG_Visitas" Relationship="MultigymModel.FK_MG_Visitas_Gym" FromRole="MG_Gym" ToRole="MG_Visitas" />
+        </EntityType>
+        <Association Name="FK_MG_Gym_Ciudades">
+          <End Type="MultigymModel.MG_Ciudades" Role="MG_Ciudades" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Gym" Role="MG_Gym" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Ciudades">
+              <PropertyRef Name="Id_Ciudad" />
+            </Principal>
+            <Dependent Role="MG_Gym">
+              <PropertyRef Name="Id_Ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__mg_review__Id_Gy__619B8048">
+          <End Type="MultigymModel.MG_Gym" Role="MG_Gym" Multiplicity="1" />
+          <End Type="MultigymModel.mg_reviews" Role="mg_reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Gym">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mg_reviews">
+              <PropertyRef Name="Id_Gym" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Gym_Disc_Gym">
+          <End Type="MultigymModel.MG_Gym" Role="MG_Gym" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Gym_Disc" Role="MG_Gym_Disc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Gym">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MG_Gym_Disc">
+              <PropertyRef Name="Id_Gym" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Gym_Serv_Gym">
+          <End Type="MultigymModel.MG_Gym" Role="MG_Gym" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Gym_Serv" Role="MG_Gym_Serv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Gym">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MG_Gym_Serv">
+              <PropertyRef Name="Id_Gym" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_Visitas_Gym">
+          <End Type="MultigymModel.MG_Gym" Role="MG_Gym" Multiplicity="1" />
+          <End Type="MultigymModel.MG_Visitas" Role="MG_Visitas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_Gym">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MG_Visitas">
+              <PropertyRef Name="Id_Gym" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MultigymModelStoreContainer" CdmEntityContainer="MultigymEntities1">
+          <FunctionImportMapping FunctionImportName="Chk_Credencial_Persona" FunctionName="MultigymModel.Store.Chk_Credencial_Persona" />
+          <EntitySetMapping Name="MG_Ciudades">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Ciudades">
+              <MappingFragment StoreEntitySet="MG_Ciudades">
+                <ScalarProperty Name="CodigoPais" ColumnName="CodigoPais" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Disciplinas">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Disciplinas">
+              <MappingFragment StoreEntitySet="MG_Disciplinas">
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Empresa">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Empresa">
+              <MappingFragment StoreEntitySet="MG_Empresa">
+                <ScalarProperty Name="Passw" ColumnName="Passw" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="PersContacto" ColumnName="PersContacto" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Gym_Disc">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Gym_Disc">
+              <MappingFragment StoreEntitySet="MG_Gym_Disc">
+                <ScalarProperty Name="Id_Disciplina" ColumnName="Id_Disciplina" />
+                <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Gym_Serv">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Gym_Serv">
+              <MappingFragment StoreEntitySet="MG_Gym_Serv">
+                <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
+                <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Pagos">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Pagos">
+              <MappingFragment StoreEntitySet="MG_Pagos">
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="FecPago" ColumnName="FecPago" />
+                <ScalarProperty Name="Id_persona" ColumnName="Id_persona" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Persona">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Persona">
+              <MappingFragment StoreEntitySet="MG_Persona">
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Id_empresa" ColumnName="Id_empresa" />
+                <ScalarProperty Name="CredDisponible" ColumnName="CredDisponible" />
+                <ScalarProperty Name="Id_Plan" ColumnName="Id_Plan" />
+                <ScalarProperty Name="FecIngreso" ColumnName="FecIngreso" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="FecNacimiento" ColumnName="FecNacimiento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Passw" ColumnName="Passw" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Planes">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Planes">
+              <MappingFragment StoreEntitySet="MG_Planes">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mg_reviews">
+            <EntityTypeMapping TypeName="MultigymModel.mg_reviews">
+              <MappingFragment StoreEntitySet="mg_reviews">
+                <ScalarProperty Name="Review" ColumnName="Review" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+                <ScalarProperty Name="FecReview" ColumnName="FecReview" />
+                <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+                <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Servicios">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Servicios">
+              <MappingFragment StoreEntitySet="MG_Servicios">
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Visitas">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Visitas">
+              <MappingFragment StoreEntitySet="MG_Visitas">
+                <ScalarProperty Name="CredUsado" ColumnName="CredUsado" />
+                <ScalarProperty Name="FecVisita" ColumnName="FecVisita" />
+                <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+                <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_Gym">
+            <EntityTypeMapping TypeName="MultigymModel.MG_Gym">
+              <MappingFragment StoreEntitySet="MG_Gym">
+                <ScalarProperty Name="ReviewAverage" ColumnName="ReviewAverage" />
+                <ScalarProperty Name="ReviewCount" ColumnName="ReviewCount" />
+                <ScalarProperty Name="Passw" ColumnName="Passw" />
+                <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="FecActivacion" ColumnName="FecActivacion" />
+                <ScalarProperty Name="HorarioDF" ColumnName="HorarioDF" />
+                <ScalarProperty Name="HorarioS" ColumnName="HorarioS" />
+                <ScalarProperty Name="HorarioLV" ColumnName="HorarioLV" />
+                <ScalarProperty Name="Img3" ColumnName="Img3" />
+                <ScalarProperty Name="Img2" ColumnName="Img2" />
+                <ScalarProperty Name="Img1" ColumnName="Img1" />
+                <ScalarProperty Name="ImgLogo" ColumnName="ImgLogo" />
+                <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Web" ColumnName="Web" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Referencias" ColumnName="Referencias" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
