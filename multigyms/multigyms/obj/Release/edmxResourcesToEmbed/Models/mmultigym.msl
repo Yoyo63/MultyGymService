@@ -1,21 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="MultigymModelStoreContainer" CdmEntityContainer="MultigymEntities1">
+    <FunctionImportMapping FunctionImportName="Chk_Credencial_Persona" FunctionName="MultigymModel.Store.Chk_Credencial_Persona" />
     <EntitySetMapping Name="MG_Ciudades">
       <EntityTypeMapping TypeName="MultigymModel.MG_Ciudades">
         <MappingFragment StoreEntitySet="MG_Ciudades">
-          <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
-          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
           <ScalarProperty Name="CodigoPais" ColumnName="CodigoPais" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Disciplinas">
       <EntityTypeMapping TypeName="MultigymModel.MG_Disciplinas">
         <MappingFragment StoreEntitySet="MG_Disciplinas">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -23,139 +24,141 @@
       <EntityTypeMapping TypeName="MultigymModel.MG_Empresa">
         <MappingFragment StoreEntitySet="MG_Empresa">
           <ScalarProperty Name="Passw" ColumnName="Passw" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="PersContacto" ColumnName="PersContacto" />
-          <ScalarProperty Name="Celular" ColumnName="Celular" />
-          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
           <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="PersContacto" ColumnName="PersContacto" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Gym">
       <EntityTypeMapping TypeName="MultigymModel.MG_Gym">
         <MappingFragment StoreEntitySet="MG_Gym">
+          <ScalarProperty Name="ReviewAverage" ColumnName="ReviewAverage" />
+          <ScalarProperty Name="ReviewCount" ColumnName="ReviewCount" />
           <ScalarProperty Name="Passw" ColumnName="Passw" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-          <ScalarProperty Name="Referencias" ColumnName="Referencias" />
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="Celular" ColumnName="Celular" />
-          <ScalarProperty Name="Web" ColumnName="Web" />
-          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Lat" ColumnName="Lat" />
-          <ScalarProperty Name="Lon" ColumnName="Lon" />
-          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
-          <ScalarProperty Name="Creditos" ColumnName="Creditos" />
-          <ScalarProperty Name="ImgLogo" ColumnName="ImgLogo" />
-          <ScalarProperty Name="Img1" ColumnName="Img1" />
-          <ScalarProperty Name="Img2" ColumnName="Img2" />
-          <ScalarProperty Name="Img3" ColumnName="Img3" />
-          <ScalarProperty Name="HorarioLV" ColumnName="HorarioLV" />
-          <ScalarProperty Name="HorarioS" ColumnName="HorarioS" />
-          <ScalarProperty Name="HorarioDF" ColumnName="HorarioDF" />
-          <ScalarProperty Name="FecActivacion" ColumnName="FecActivacion" />
-          <ScalarProperty Name="Activo" ColumnName="Activo" />
           <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="FecActivacion" ColumnName="FecActivacion" />
+          <ScalarProperty Name="HorarioDF" ColumnName="HorarioDF" />
+          <ScalarProperty Name="HorarioS" ColumnName="HorarioS" />
+          <ScalarProperty Name="HorarioLV" ColumnName="HorarioLV" />
+          <ScalarProperty Name="Img3" ColumnName="Img3" />
+          <ScalarProperty Name="Img2" ColumnName="Img2" />
+          <ScalarProperty Name="Img1" ColumnName="Img1" />
+          <ScalarProperty Name="ImgLogo" ColumnName="ImgLogo" />
+          <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Referencias" ColumnName="Referencias" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Gym_Disc">
       <EntityTypeMapping TypeName="MultigymModel.MG_Gym_Disc">
         <MappingFragment StoreEntitySet="MG_Gym_Disc">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
           <ScalarProperty Name="Id_Disciplina" ColumnName="Id_Disciplina" />
+          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Gym_Serv">
       <EntityTypeMapping TypeName="MultigymModel.MG_Gym_Serv">
         <MappingFragment StoreEntitySet="MG_Gym_Serv">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
           <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
+          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Pagos">
       <EntityTypeMapping TypeName="MultigymModel.MG_Pagos">
         <MappingFragment StoreEntitySet="MG_Pagos">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_persona" ColumnName="Id_persona" />
-          <ScalarProperty Name="FecPago" ColumnName="FecPago" />
           <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="FecPago" ColumnName="FecPago" />
+          <ScalarProperty Name="Id_persona" ColumnName="Id_persona" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Persona">
       <EntityTypeMapping TypeName="MultigymModel.MG_Persona">
         <MappingFragment StoreEntitySet="MG_Persona">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Login" ColumnName="Login" />
-          <ScalarProperty Name="Passw" ColumnName="Passw" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="FecNacimiento" ColumnName="FecNacimiento" />
-          <ScalarProperty Name="Celular" ColumnName="Celular" />
-          <ScalarProperty Name="FecIngreso" ColumnName="FecIngreso" />
-          <ScalarProperty Name="Id_Plan" ColumnName="Id_Plan" />
-          <ScalarProperty Name="CredDisponible" ColumnName="CredDisponible" />
-          <ScalarProperty Name="Id_empresa" ColumnName="Id_empresa" />
-          <ScalarProperty Name="Activo" ColumnName="Activo" />
           <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Id_empresa" ColumnName="Id_empresa" />
+          <ScalarProperty Name="CredDisponible" ColumnName="CredDisponible" />
+          <ScalarProperty Name="Id_Plan" ColumnName="Id_Plan" />
+          <ScalarProperty Name="FecIngreso" ColumnName="FecIngreso" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="FecNacimiento" ColumnName="FecNacimiento" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Passw" ColumnName="Passw" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Planes">
       <EntityTypeMapping TypeName="MultigymModel.MG_Planes">
         <MappingFragment StoreEntitySet="MG_Planes">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="Precio" ColumnName="Precio" />
-          <ScalarProperty Name="Creditos" ColumnName="Creditos" />
           <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MG_Reviews">
-      <EntityTypeMapping TypeName="MultigymModel.MG_Reviews">
-        <MappingFragment StoreEntitySet="MG_Reviews">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
-          <ScalarProperty Name="Stars" ColumnName="Stars" />
-          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+    <EntitySetMapping Name="mg_reviews">
+      <EntityTypeMapping TypeName="MultigymModel.mg_reviews">
+        <MappingFragment StoreEntitySet="mg_reviews">
+          <ScalarProperty Name="Review" ColumnName="Review" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
           <ScalarProperty Name="FecReview" ColumnName="FecReview" />
+          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+          <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Servicios">
       <EntityTypeMapping TypeName="MultigymModel.MG_Servicios">
         <MappingFragment StoreEntitySet="MG_Servicios">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MG_Visitas">
       <EntityTypeMapping TypeName="MultigymModel.MG_Visitas">
         <MappingFragment StoreEntitySet="MG_Visitas">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
-          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
-          <ScalarProperty Name="FecVisita" ColumnName="FecVisita" />
           <ScalarProperty Name="CredUsado" ColumnName="CredUsado" />
+          <ScalarProperty Name="FecVisita" ColumnName="FecVisita" />
+          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+          <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="Chk_Credencial_Persona" FunctionName="MultigymModel.Store.Chk_Credencial_Persona" />
   </EntityContainerMapping>
 </Mapping>

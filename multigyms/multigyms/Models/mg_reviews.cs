@@ -21,7 +21,7 @@ namespace multigyms.Models
         public byte Calificacion { get; set; }
         public string Review { get; set; }
     
-        public virtual MG_Persona MG_Persona { get; set; }
         public virtual MG_Gym MG_Gym { get; set; }
+        public virtual MG_Persona MG_Persona { get; set; }
     }
 }

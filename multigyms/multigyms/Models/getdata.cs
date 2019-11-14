@@ -17,5 +17,6 @@ namespace multigyms.Models
         public string celular { get; set; }
         public string fechanacimiento { get; set; }
         public string email { get; set; }
+        public int idplan { get; set; }
     }
 }

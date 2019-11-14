@@ -20,7 +20,7 @@ namespace multigyms.Models
         public Nullable<System.DateTime> FecVisita { get; set; }
         public short CredUsado { get; set; }
     
-        public virtual MG_Persona MG_Persona { get; set; }
         public virtual MG_Gym MG_Gym { get; set; }
+        public virtual MG_Persona MG_Persona { get; set; }
     }
 }

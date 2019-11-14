@@ -195,6 +195,7 @@
     <Compile Include="Models\EDisciplina.cs" />
     <Compile Include="Models\EGym.cs" />
     <Compile Include="Models\EPersona.cs" />
+    <Compile Include="Models\EPlan.cs" />
     <Compile Include="Models\EServicio.cs" />
     <Compile Include="Models\getdata.cs" />
     <Compile Include="Models\MG_Ciudades.cs">

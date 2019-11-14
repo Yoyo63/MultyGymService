@@ -30,6 +30,7 @@ namespace multigyms.Models
         public virtual DbSet<MG_Ciudades> MG_Ciudades { get; set; }
         public virtual DbSet<MG_Disciplinas> MG_Disciplinas { get; set; }
         public virtual DbSet<MG_Empresa> MG_Empresa { get; set; }
+        public virtual DbSet<MG_Gym> MG_Gym { get; set; }
         public virtual DbSet<MG_Gym_Disc> MG_Gym_Disc { get; set; }
         public virtual DbSet<MG_Gym_Serv> MG_Gym_Serv { get; set; }
         public virtual DbSet<MG_Pagos> MG_Pagos { get; set; }
@@ -38,7 +39,6 @@ namespace multigyms.Models
         public virtual DbSet<mg_reviews> mg_reviews { get; set; }
         public virtual DbSet<MG_Servicios> MG_Servicios { get; set; }
         public virtual DbSet<MG_Visitas> MG_Visitas { get; set; }
-        public virtual DbSet<MG_Gym> MG_Gym { get; set; }
     
         public virtual ObjectResult<Nullable<bool>> Chk_Credencial_Persona(string login, string password)
         {

@@ -18,7 +18,7 @@ namespace multigyms.Models
         public int Id_Gym { get; set; }
         public int Id_Servicio { get; set; }
     
-        public virtual MG_Servicios MG_Servicios { get; set; }
         public virtual MG_Gym MG_Gym { get; set; }
+        public virtual MG_Servicios MG_Servicios { get; set; }
     }
 }

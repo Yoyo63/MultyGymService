@@ -17,6 +17,39 @@ namespace multigyms.Controllers
     public class GymsController : ApiController
     {
         [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("api/gyms/getplanes")]
+        [HttpPost]
+        public IHttpActionResult getplanes([FromBody] getdata data)
+        {
+            try
+            {
+                MultigymEntities1 context = new MultigymEntities1();
+                List<MG_Planes> plans = new List<MG_Planes>();
+                plans = (from x in context.MG_Planes
+                         where x.Activo==true
+                        select x).ToList();
+
+                List<EPlan> lista = new List<EPlan>();
+                foreach (var p in plans)
+                {
+                    var pl = new EPlan();
+                    pl.idplan = p.Id;
+                    pl.plan = p.Nombre;
+                    pl.descripcion = p.Descripcion;
+                    pl.precio = p.Creditos;
+                    pl.creditos = p.Creditos;
+                    pl.activo = p.Activo;
+                    lista.Add(pl);
+                }
+                return Ok(RespuestaApi<List<EPlan>>.createRespuestaSuccess(lista));
+            }
+            catch (Exception ex)
+            {
+                return Ok(RespuestaApi<string>.createRespuestaError(ex.Message));
+            }
+        }
+
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/gyms/getgymsbydisc")]
         [HttpPost]
         public IHttpActionResult getgymsbydisc([FromBody] getdata data)
@@ -120,7 +153,7 @@ namespace multigyms.Controllers
                 v.CredUsado = g.Creditos;
                 context.MG_Visitas.Add(v);
                 context.SaveChanges();
-                return Ok(RespuestaApi<string>.createRespuestaSuccess("Transaccion exitosa " + u.Nombre + " te restan " + u.CredDisponible + " creditos"));
+                return Ok(RespuestaApi<string>.createRespuestaSuccess("Transaccion exitosa " + u.Nombre + " te restan " + u.CredDisponible + " creditos|"+g.ImgLogo+"|"+u.Nombre +" "+ u.Apellido + "|" + Now1.ToString("dd/MM/yyyy HH:mm")));
             }
             catch (Exception ex)
             {

@@ -107,6 +107,8 @@ namespace multigyms.Controllers
                     per.FecNacimiento = Convert.ToDateTime(data.fechanacimiento);
                     per.Email = data.email;
                     per.Passw = data.password;
+                    per.Activo = true;
+                    per.Id_Plan = data.idplan;
                     context.MG_Persona.Add(per);
                     context.SaveChanges();
                     return Ok(RespuestaApi<MG_Persona>.createRespuestaSuccess(per));
