@@ -20,6 +20,7 @@ namespace multigyms.Controllers
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/user/perfil")]
         [HttpPost]
+
         public IHttpActionResult getperfil([FromBody] getdata data)
         {
             try
@@ -65,16 +66,24 @@ namespace multigyms.Controllers
                             select x).ToList();
                 if (user.Count()!=0)
                 {
-                    var per = new EPersona();
-                    per.id = user.First().Id;
-                    per.nombre = user.First().Nombre;
-                    per.apellido = user.First().Apellido;
-                    per.email = user.First().Email;
-                    per.celular = user.First().Celular;
-                    per.fechaingreso = user.First().FecIngreso;
-                    per.creditos = user.First().CredDisponible;
-                    per.token = user.First().Token;
-                    return Ok(RespuestaApi<EPersona>.createRespuestaSuccess(per));
+                    if (user.First().Activo == true)
+                    {
+                        var per = new EPersona();
+                        per.id = user.First().Id;
+                        per.nombre = user.First().Nombre;
+                        per.apellido = user.First().Apellido;
+                        per.email = user.First().Email;
+                        per.celular = user.First().Celular;
+                        per.fechaingreso = user.First().FecIngreso;
+                        per.creditos = user.First().CredDisponible;
+                        per.token = user.First().Token;
+                        return Ok(RespuestaApi<EPersona>.createRespuestaSuccess(per));
+                    }
+                    else
+                    {
+                        return Ok(RespuestaApi<string>.createRespuestaError("Usuario inactivo, Ponga en contacto con el soporte tecnico"));
+                    }
+                    
                 }
                 else
                 {
@@ -86,6 +95,7 @@ namespace multigyms.Controllers
                 return Ok(RespuestaApi<string>.createRespuestaError(ex.Message));
             }
         }
+
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/user/registro")]
         [HttpPost]

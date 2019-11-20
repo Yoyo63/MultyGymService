@@ -18,5 +18,6 @@ namespace multigyms.Models
         public string fechanacimiento { get; set; }
         public string email { get; set; }
         public int idplan { get; set; }
+        public string nombregym { get; set; }
     }
 }

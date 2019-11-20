@@ -17,6 +17,47 @@ namespace multigyms.Controllers
     public class GymsController : ApiController
     {
         [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("api/gyms/getgymbynombre")]
+        [HttpPost]
+        public IHttpActionResult getgymbynombre([FromBody] getdata data)
+        {
+            try
+            {
+                MultigymEntities1 context = new MultigymEntities1();
+                List<MG_Gym> gyms = new List<MG_Gym>();
+                gyms = (from x in context.MG_Gym
+                         where x.Activo == true
+                         && x.Nombre.Contains(data.nombregym)
+                         select x).ToList();
+
+                List<EGym> lista = new List<EGym>();
+                foreach (var g in gyms)
+                {
+                    var gy = new EGym();
+                    gy.idgym = g.ID;
+                    gy.nombregym = g.Nombre;
+                    gy.img = g.ImgLogo;
+                    gy.direccion = g.Direccion;
+                    gy.telefono = g.Telefono;
+                    gy.creditos = g.Creditos;
+                    gy.lat = g.Lat.ToString();
+                    gy.lon = g.Lon.ToString();
+                    gy.horariolv = g.HorarioLV;
+                    gy.horarios = g.HorarioS;
+                    gy.horariod = g.HorarioDF;
+                    gy.reviewaverage = g.ReviewAverage.ToString();
+                    gy.reviewcount = g.ReviewCount.ToString();
+                    lista.Add(gy);
+                }
+                return Ok(RespuestaApi<List<EGym>>.createRespuestaSuccess(lista));
+            }
+            catch (Exception ex)
+            {
+                return Ok(RespuestaApi<string>.createRespuestaError(ex.Message));
+            }
+        }
+
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/gyms/getplanes")]
         [HttpPost]
         public IHttpActionResult getplanes([FromBody] getdata data)
