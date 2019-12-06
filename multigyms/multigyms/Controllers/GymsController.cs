@@ -102,12 +102,14 @@ namespace multigyms.Controllers
                 if (data.iddisc == 0)
                 {
                     gyms = (from x in context.MG_Gym
+                            where x.Activo.Equals(true)
                             select x).ToList();
                 }
                 else
                 {
                     gyms = (from x in context.MG_Gym_Disc
                             where x.Id_Disciplina == data.iddisc
+                            && x.MG_Gym.Activo.Equals(true)
                             select x.MG_Gym).ToList();
                 }
                 
