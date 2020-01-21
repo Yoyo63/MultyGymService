@@ -43,7 +43,7 @@
           <Property Name="Id_Ciudad" Type="int" Nullable="false" />
           <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Referencias" Type="nvarchar" MaxLength="250" />
+          <Property Name="Referencias" Type="nvarchar" MaxLength="500" />
           <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
           <Property Name="Celular" Type="nvarchar" MaxLength="50" />
           <Property Name="Web" Type="nvarchar" MaxLength="100" />
@@ -110,6 +110,7 @@
           <Property Name="Id_empresa" Type="int" />
           <Property Name="Activo" Type="bit" Nullable="false" />
           <Property Name="Token" Type="nvarchar" MaxLength="150" />
+          <Property Name="Id_Familia" Type="int" />
         </EntityType>
         <EntityType Name="MG_Planes">
           <Key>
@@ -121,6 +122,9 @@
           <Property Name="Precio" Type="smallint" Nullable="false" />
           <Property Name="Creditos" Type="smallint" Nullable="false" />
           <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="ImagenQR" Type="nvarchar" MaxLength="150" />
+          <Property Name="DescQR" Type="nvarchar" MaxLength="350" />
+          <Property Name="Khipu" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="mg_reviews">
           <Key>
@@ -150,6 +154,13 @@
           <Property Name="Id_Gym" Type="int" Nullable="false" />
           <Property Name="FecVisita" Type="smalldatetime" />
           <Property Name="CredUsado" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_FormaPago">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK__mg_review__Id_Gy__619B8048">
           <End Role="MG_Gym" Type="Self.MG_Gym" Multiplicity="1" />
@@ -312,6 +323,7 @@
           <EntitySet Name="mg_reviews" EntityType="Self.mg_reviews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MG_Servicios" EntityType="Self.MG_Servicios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MG_Visitas" EntityType="Self.MG_Visitas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MG_FormaPago" EntityType="Self.MG_FormaPago" Schema="lorgioq1" store:Type="Tables" />
           <AssociationSet Name="FK__mg_review__Id_Gy__619B8048" Association="Self.FK__mg_review__Id_Gy__619B8048">
             <End Role="MG_Gym" EntitySet="MG_Gym" />
             <End Role="mg_reviews" EntitySet="mg_reviews" />
@@ -382,6 +394,7 @@
           <EntitySet Name="mg_reviews" EntityType="MultigymModel.mg_reviews" />
           <EntitySet Name="MG_Servicios" EntityType="MultigymModel.MG_Servicios" />
           <EntitySet Name="MG_Visitas" EntityType="MultigymModel.MG_Visitas" />
+          <EntitySet Name="MG_FormaPago" EntityType="MultigymModel.MG_FormaPago" />
           <AssociationSet Name="FK_MG_Gym_Ciudades" Association="MultigymModel.FK_MG_Gym_Ciudades">
             <End Role="MG_Ciudades" EntitySet="MG_Ciudades" />
             <End Role="MG_Gym" EntitySet="MG_Gym" />
@@ -472,7 +485,7 @@
           <Property Name="Id_Ciudad" Type="Int32" Nullable="false" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Referencias" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Referencias" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Web" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -549,6 +562,7 @@
           <Property Name="Id_empresa" Type="Int32" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <Property Name="Token" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Familia" Type="Int32" />
           <NavigationProperty Name="MG_Empresa" Relationship="MultigymModel.FK_MG_Persona_Empresa" FromRole="MG_Persona" ToRole="MG_Empresa" />
           <NavigationProperty Name="MG_Pagos" Relationship="MultigymModel.FK_MG_Pagos_Persona" FromRole="MG_Persona" ToRole="MG_Pagos" />
           <NavigationProperty Name="mg_reviews" Relationship="MultigymModel.FK__mg_review__Id_Pe__60A75C0F" FromRole="MG_Persona" ToRole="mg_reviews" />
@@ -565,6 +579,9 @@
           <Property Name="Precio" Type="Int16" Nullable="false" />
           <Property Name="Creditos" Type="Int16" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="ImagenQR" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DescQR" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="Khipu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK_MG_Persona_Planes" FromRole="MG_Planes" ToRole="MG_Persona" />
         </EntityType>
         <EntityType Name="mg_reviews">
@@ -600,6 +617,13 @@
           <Property Name="CredUsado" Type="Int16" Nullable="false" />
           <NavigationProperty Name="MG_Gym" Relationship="MultigymModel.FK_MG_Visitas_Gym" FromRole="MG_Visitas" ToRole="MG_Gym" />
           <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK_MG_Visitas_Persona" FromRole="MG_Visitas" ToRole="MG_Persona" />
+        </EntityType>
+        <EntityType Name="MG_FormaPago">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_MG_Gym_Ciudades">
           <End Type="MultigymModel.MG_Ciudades" Role="MG_Ciudades" Multiplicity="1" />
@@ -849,6 +873,7 @@
           <EntitySetMapping Name="MG_Persona">
             <EntityTypeMapping TypeName="MultigymModel.MG_Persona">
               <MappingFragment StoreEntitySet="MG_Persona">
+                <ScalarProperty Name="Id_Familia" ColumnName="Id_Familia" />
                 <ScalarProperty Name="Token" ColumnName="Token" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Id_empresa" ColumnName="Id_empresa" />
@@ -869,6 +894,9 @@
           <EntitySetMapping Name="MG_Planes">
             <EntityTypeMapping TypeName="MultigymModel.MG_Planes">
               <MappingFragment StoreEntitySet="MG_Planes">
+                <ScalarProperty Name="Khipu" ColumnName="Khipu" />
+                <ScalarProperty Name="DescQR" ColumnName="DescQR" />
+                <ScalarProperty Name="ImagenQR" ColumnName="ImagenQR" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Creditos" ColumnName="Creditos" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
@@ -906,6 +934,14 @@
                 <ScalarProperty Name="FecVisita" ColumnName="FecVisita" />
                 <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
                 <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MG_FormaPago">
+            <EntityTypeMapping TypeName="MultigymModel.MG_FormaPago">
+              <MappingFragment StoreEntitySet="MG_FormaPago">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -99,6 +99,7 @@
     <EntitySetMapping Name="MG_Persona">
       <EntityTypeMapping TypeName="MultigymModel.MG_Persona">
         <MappingFragment StoreEntitySet="MG_Persona">
+          <ScalarProperty Name="Id_Familia" ColumnName="Id_Familia" />
           <ScalarProperty Name="Token" ColumnName="Token" />
           <ScalarProperty Name="Activo" ColumnName="Activo" />
           <ScalarProperty Name="Id_empresa" ColumnName="Id_empresa" />
@@ -119,6 +120,9 @@
     <EntitySetMapping Name="MG_Planes">
       <EntityTypeMapping TypeName="MultigymModel.MG_Planes">
         <MappingFragment StoreEntitySet="MG_Planes">
+          <ScalarProperty Name="Khipu" ColumnName="Khipu" />
+          <ScalarProperty Name="DescQR" ColumnName="DescQR" />
+          <ScalarProperty Name="ImagenQR" ColumnName="ImagenQR" />
           <ScalarProperty Name="Activo" ColumnName="Activo" />
           <ScalarProperty Name="Creditos" ColumnName="Creditos" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />
@@ -156,6 +160,14 @@
           <ScalarProperty Name="FecVisita" ColumnName="FecVisita" />
           <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
           <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_FormaPago">
+      <EntityTypeMapping TypeName="MultigymModel.MG_FormaPago">
+        <MappingFragment StoreEntitySet="MG_FormaPago">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

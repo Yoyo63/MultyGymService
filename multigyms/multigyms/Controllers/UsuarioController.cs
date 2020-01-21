@@ -20,7 +20,6 @@ namespace multigyms.Controllers
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/user/perfil")]
         [HttpPost]
-
         public IHttpActionResult getperfil([FromBody] getdata data)
         {
             try
@@ -132,6 +131,51 @@ namespace multigyms.Controllers
             {
                 return Ok(RespuestaApi<string>.createRespuestaError(ex.Message));
             }
+        }
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("api/user/historialcheckin")]
+        [HttpPost]
+        public IHttpActionResult historialcheckin([FromBody] getdata data)
+        {
+            try
+            {
+                MultigymEntities1 context = new MultigymEntities1();
+                var user = (from x in context.MG_Persona
+                            where x.Id == data.idusuario
+                            select x).First();
+                if (user != null)
+                {
+                    var his = (from x in context.MG_Visitas
+                               where x.Id_Persona == data.idusuario
+                               select x).OrderByDescending(x=>x.FecVisita).ToList().Take(30);
+                    var res = new List<Evisita>();
+                    foreach (var v in his)
+                    {
+                        var vi = new Evisita();
+                        vi.idusuario = user.Id;
+                        vi.nombregym = v.MG_Gym.Nombre;
+                        vi.fechayhora = parcedatetime(Convert.ToDateTime(v.FecVisita));
+                        vi.creditousados = v.CredUsado;
+                        vi.idgym = v.Id_Gym;
+                        res.Add(vi);
+                    }
+          
+                    return Ok(RespuestaApi<List<Evisita>>.createRespuestaSuccess(res));
+                }
+                else
+                {
+                    return Ok(RespuestaApi<string>.createRespuestaError("no se enontro un Usuario con este Id"));
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return Ok(RespuestaApi<string>.createRespuestaError(ex.Message));
+            }
+        }
+        public static DateTime parcedatetime(DateTime date)
+        {
+            return TimeZoneInfo.ConvertTime(date, TimeZoneInfo.FindSystemTimeZoneById("SA Western Standard Time"));
         }
     }
 }

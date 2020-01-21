@@ -38,7 +38,7 @@
     <Property Name="Id_Ciudad" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Referencias" Type="nvarchar" MaxLength="250" />
+    <Property Name="Referencias" Type="nvarchar" MaxLength="500" />
     <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
     <Property Name="Celular" Type="nvarchar" MaxLength="50" />
     <Property Name="Web" Type="nvarchar" MaxLength="100" />
@@ -105,6 +105,7 @@
     <Property Name="Id_empresa" Type="int" />
     <Property Name="Activo" Type="bit" Nullable="false" />
     <Property Name="Token" Type="nvarchar" MaxLength="150" />
+    <Property Name="Id_Familia" Type="int" />
   </EntityType>
   <EntityType Name="MG_Planes">
     <Key>
@@ -116,6 +117,9 @@
     <Property Name="Precio" Type="smallint" Nullable="false" />
     <Property Name="Creditos" Type="smallint" Nullable="false" />
     <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="ImagenQR" Type="nvarchar" MaxLength="150" />
+    <Property Name="DescQR" Type="nvarchar" MaxLength="350" />
+    <Property Name="Khipu" Type="nvarchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="mg_reviews">
     <Key>
@@ -145,6 +149,13 @@
     <Property Name="Id_Gym" Type="int" Nullable="false" />
     <Property Name="FecVisita" Type="smalldatetime" />
     <Property Name="CredUsado" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MG_FormaPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK__mg_review__Id_Gy__619B8048">
     <End Role="MG_Gym" Type="Self.MG_Gym" Multiplicity="1" />
@@ -307,6 +318,7 @@
     <EntitySet Name="mg_reviews" EntityType="Self.mg_reviews" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MG_Servicios" EntityType="Self.MG_Servicios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MG_Visitas" EntityType="Self.MG_Visitas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MG_FormaPago" EntityType="Self.MG_FormaPago" Schema="lorgioq1" store:Type="Tables" />
     <AssociationSet Name="FK__mg_review__Id_Gy__619B8048" Association="Self.FK__mg_review__Id_Gy__619B8048">
       <End Role="MG_Gym" EntitySet="MG_Gym" />
       <End Role="mg_reviews" EntitySet="mg_reviews" />

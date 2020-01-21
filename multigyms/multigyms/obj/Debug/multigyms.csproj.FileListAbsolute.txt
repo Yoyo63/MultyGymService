@@ -145,6 +145,5 @@ C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multi
 C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\es\System.Web.Webpages.Razor.resources.dll
 C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\es\System.Web.Helpers.resources.dll
 C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\es\System.Web.Mvc.resources.dll
-C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\obj\Debug\multigyms.csprojResolveAssemblyReference.cache
 C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\obj\Debug\multigyms.dll
 C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\obj\Debug\multigyms.pdb

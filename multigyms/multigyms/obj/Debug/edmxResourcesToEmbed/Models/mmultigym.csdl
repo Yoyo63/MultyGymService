@@ -17,6 +17,7 @@
     <EntitySet Name="mg_reviews" EntityType="MultigymModel.mg_reviews" />
     <EntitySet Name="MG_Servicios" EntityType="MultigymModel.MG_Servicios" />
     <EntitySet Name="MG_Visitas" EntityType="MultigymModel.MG_Visitas" />
+    <EntitySet Name="MG_FormaPago" EntityType="MultigymModel.MG_FormaPago" />
     <AssociationSet Name="FK_MG_Gym_Ciudades" Association="MultigymModel.FK_MG_Gym_Ciudades">
       <End Role="MG_Ciudades" EntitySet="MG_Ciudades" />
       <End Role="MG_Gym" EntitySet="MG_Gym" />
@@ -107,7 +108,7 @@
     <Property Name="Id_Ciudad" Type="Int32" Nullable="false" />
     <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Referencias" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Referencias" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Web" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -184,6 +185,7 @@
     <Property Name="Id_empresa" Type="Int32" />
     <Property Name="Activo" Type="Boolean" Nullable="false" />
     <Property Name="Token" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Id_Familia" Type="Int32" />
     <NavigationProperty Name="MG_Empresa" Relationship="MultigymModel.FK_MG_Persona_Empresa" FromRole="MG_Persona" ToRole="MG_Empresa" />
     <NavigationProperty Name="MG_Pagos" Relationship="MultigymModel.FK_MG_Pagos_Persona" FromRole="MG_Persona" ToRole="MG_Pagos" />
     <NavigationProperty Name="mg_reviews" Relationship="MultigymModel.FK__mg_review__Id_Pe__60A75C0F" FromRole="MG_Persona" ToRole="mg_reviews" />
@@ -200,6 +202,9 @@
     <Property Name="Precio" Type="Int16" Nullable="false" />
     <Property Name="Creditos" Type="Int16" Nullable="false" />
     <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="ImagenQR" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DescQR" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Khipu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK_MG_Persona_Planes" FromRole="MG_Planes" ToRole="MG_Persona" />
   </EntityType>
   <EntityType Name="mg_reviews">
@@ -235,6 +240,13 @@
     <Property Name="CredUsado" Type="Int16" Nullable="false" />
     <NavigationProperty Name="MG_Gym" Relationship="MultigymModel.FK_MG_Visitas_Gym" FromRole="MG_Visitas" ToRole="MG_Gym" />
     <NavigationProperty Name="MG_Persona" Relationship="MultigymModel.FK_MG_Visitas_Persona" FromRole="MG_Visitas" ToRole="MG_Persona" />
+  </EntityType>
+  <EntityType Name="MG_FormaPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_MG_Gym_Ciudades">
     <End Type="MultigymModel.MG_Ciudades" Role="MG_Ciudades" Multiplicity="1" />

@@ -205,6 +205,40 @@ namespace multigyms.Controllers
         }
 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("api/gyms/checkin2020")]
+        [HttpPost]
+        public IHttpActionResult checkin2020([FromBody] getdata data)
+        {
+            try
+            {
+                MultigymEntities1 context = new MultigymEntities1();
+                var g = (from x in context.MG_Gym
+                         where x.ID == data.idgym
+                         select x).First();
+                var u = (from x in context.MG_Persona
+                         where x.Id == data.idusuario
+                         select x).First();
+                u.CredDisponible = Convert.ToInt16(u.CredDisponible - g.Creditos);
+                context.SaveChanges();
+                var v = new MG_Visitas();
+                v.Id_Gym = g.ID;
+                v.Id_Persona = u.Id;
+                v.FecVisita = Now1;
+                v.CredUsado = g.Creditos;
+                context.MG_Visitas.Add(v);
+                context.SaveChanges();
+                var res = new ERandomResponse();
+                res.mensaje = "Transaccion exitosa " + u.Nombre + " te restan " + u.CredDisponible + " creditos|" + g.ImgLogo + "|" + u.Nombre + " " + u.Apellido + "|" + Now1.ToString("dd/MM/yyyy HH:mm");
+                res.creditos = u.CredDisponible.ToString();
+                return Ok(RespuestaApi<ERandomResponse>.createRespuestaSuccess(res));
+            }
+            catch (Exception ex)
+            {
+                return Ok(RespuestaApi<string>.createRespuestaError(ex.Message));
+            }
+        }
+
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/gyms/now1")]
         [HttpPost]
         public IHttpActionResult now([FromBody] getdata data)

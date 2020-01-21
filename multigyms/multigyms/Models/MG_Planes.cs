@@ -26,6 +26,9 @@ namespace multigyms.Models
         public short Precio { get; set; }
         public short Creditos { get; set; }
         public bool Activo { get; set; }
+        public string ImagenQR { get; set; }
+        public string DescQR { get; set; }
+        public string Khipu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MG_Persona> MG_Persona { get; set; }

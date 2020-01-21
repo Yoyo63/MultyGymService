@@ -197,6 +197,7 @@
     <Compile Include="Models\EPersona.cs" />
     <Compile Include="Models\EPlan.cs" />
     <Compile Include="Models\EServicio.cs" />
+    <Compile Include="Models\Evisita.cs" />
     <Compile Include="Models\getdata.cs" />
     <Compile Include="Models\MG_Ciudades.cs">
       <DependentUpon>mmultigym.tt</DependentUpon>
@@ -205,6 +206,9 @@
       <DependentUpon>mmultigym.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MG_Empresa.cs">
+      <DependentUpon>mmultigym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MG_FormaPago.cs">
       <DependentUpon>mmultigym.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MG_Gym.cs">
@@ -249,6 +253,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mmultigym.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ERandomResponse.cs" />
     <Compile Include="Models\RespuestaApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
