@@ -2,6 +2,14 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="MultigymModelStoreContainer" CdmEntityContainer="MultigymEntities1">
     <FunctionImportMapping FunctionImportName="Chk_Credencial_Persona" FunctionName="MultigymModel.Store.Chk_Credencial_Persona" />
+    <EntitySetMapping Name="MG_Bancos">
+      <EntityTypeMapping TypeName="MultigymModel.MG_Bancos">
+        <MappingFragment StoreEntitySet="MG_Bancos">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MG_Ciudades">
       <EntityTypeMapping TypeName="MultigymModel.MG_Ciudades">
         <MappingFragment StoreEntitySet="MG_Ciudades">
@@ -35,9 +43,38 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MG_FormaPago">
+      <EntityTypeMapping TypeName="MultigymModel.MG_FormaPago">
+        <MappingFragment StoreEntitySet="MG_FormaPago">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_GiftCards">
+      <EntityTypeMapping TypeName="MultigymModel.MG_GiftCards">
+        <MappingFragment StoreEntitySet="MG_GiftCards">
+          <ScalarProperty Name="Usado" ColumnName="Usado" />
+          <ScalarProperty Name="FechaActivacion" ColumnName="FechaActivacion" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MG_Gym">
       <EntityTypeMapping TypeName="MultigymModel.MG_Gym">
         <MappingFragment StoreEntitySet="MG_Gym">
+          <ScalarProperty Name="Id_TipoEntidad" ColumnName="Id_TipoEntidad" />
+          <ScalarProperty Name="CelTypeID" ColumnName="CelTypeID" />
+          <ScalarProperty Name="PushID" ColumnName="PushID" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="BcoCI" ColumnName="BcoCI" />
+          <ScalarProperty Name="BcoCuentaHabiente" ColumnName="BcoCuentaHabiente" />
+          <ScalarProperty Name="BcoCuenta" ColumnName="BcoCuenta" />
+          <ScalarProperty Name="Id_Banco" ColumnName="Id_Banco" />
           <ScalarProperty Name="ReviewAverage" ColumnName="ReviewAverage" />
           <ScalarProperty Name="ReviewCount" ColumnName="ReviewCount" />
           <ScalarProperty Name="Passw" ColumnName="Passw" />
@@ -68,6 +105,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MG_Gym_Contacto">
+      <EntityTypeMapping TypeName="MultigymModel.MG_Gym_Contacto">
+        <MappingFragment StoreEntitySet="MG_Gym_Contacto">
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MG_Gym_Disc">
       <EntityTypeMapping TypeName="MultigymModel.MG_Gym_Disc">
         <MappingFragment StoreEntitySet="MG_Gym_Disc">
@@ -89,6 +138,7 @@
     <EntitySetMapping Name="MG_Pagos">
       <EntityTypeMapping TypeName="MultigymModel.MG_Pagos">
         <MappingFragment StoreEntitySet="MG_Pagos">
+          <ScalarProperty Name="Id_FormaPago" ColumnName="Id_FormaPago" />
           <ScalarProperty Name="Monto" ColumnName="Monto" />
           <ScalarProperty Name="FecPago" ColumnName="FecPago" />
           <ScalarProperty Name="Id_persona" ColumnName="Id_persona" />
@@ -99,7 +149,11 @@
     <EntitySetMapping Name="MG_Persona">
       <EntityTypeMapping TypeName="MultigymModel.MG_Persona">
         <MappingFragment StoreEntitySet="MG_Persona">
-          <ScalarProperty Name="Id_Familia" ColumnName="Id_Familia" />
+          <ScalarProperty Name="LastTipoApp" ColumnName="LastTipoApp" />
+          <ScalarProperty Name="LastImei" ColumnName="LastImei" />
+          <ScalarProperty Name="LastPushId" ColumnName="LastPushId" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
           <ScalarProperty Name="Token" ColumnName="Token" />
           <ScalarProperty Name="Activo" ColumnName="Activo" />
           <ScalarProperty Name="Id_empresa" ColumnName="Id_empresa" />
@@ -153,6 +207,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MG_TipoEntidad">
+      <EntityTypeMapping TypeName="MultigymModel.MG_TipoEntidad">
+        <MappingFragment StoreEntitySet="MG_TipoEntidad">
+          <ScalarProperty Name="Comision" ColumnName="Comision" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MG_Visitas">
       <EntityTypeMapping TypeName="MultigymModel.MG_Visitas">
         <MappingFragment StoreEntitySet="MG_Visitas">
@@ -160,14 +224,6 @@
           <ScalarProperty Name="FecVisita" ColumnName="FecVisita" />
           <ScalarProperty Name="Id_Gym" ColumnName="Id_Gym" />
           <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MG_FormaPago">
-      <EntityTypeMapping TypeName="MultigymModel.MG_FormaPago">
-        <MappingFragment StoreEntitySet="MG_FormaPago">
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

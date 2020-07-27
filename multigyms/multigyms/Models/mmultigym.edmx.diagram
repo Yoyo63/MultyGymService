@@ -5,30 +5,39 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7747d9b1a3be46b3952cab4f849a78a4" Name="Diagram1">
-        <EntityTypeShape EntityType="MultigymModel.MG_Ciudades" Width="1.5" PointX="3.875" PointY="17.125" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Disciplinas" Width="1.5" PointX="6.125" PointY="23.125" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Empresa" Width="1.5" PointX="0.875" PointY="0.5" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Gym" Width="1.5" PointX="6.125" PointY="14.375" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Gym_Disc" Width="1.5" PointX="8.375" PointY="17" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Gym_Serv" Width="1.5" PointX="8.375" PointY="14" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Pagos" Width="1.5" PointX="5.375" PointY="11.375" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Persona" Width="1.5" PointX="3.125" PointY="3.5" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Planes" Width="1.5" PointX="0.875" PointY="4.5" />
-        <EntityTypeShape EntityType="MultigymModel.mg_reviews" Width="1.5" PointX="8.375" PointY="4.75" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Servicios" Width="1.5" PointX="6.125" PointY="8.125" />
-        <EntityTypeShape EntityType="MultigymModel.MG_Visitas" Width="1.5" PointX="5.75" PointY="4.625" />
-        <EntityTypeShape EntityType="MultigymModel.MG_FormaPago" Width="1.5" PointX="2.875" PointY="1.25" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Bancos" Width="1.5" PointX="0.75" PointY="9.5" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Ciudades" Width="1.5" PointX="0.75" PointY="12.625" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Disciplinas" Width="1.5" PointX="6" PointY="4.75" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Empresa" Width="1.5" PointX="3.75" PointY="3.375" />
+        <EntityTypeShape EntityType="MultigymModel.MG_FormaPago" Width="1.5" PointX="6" PointY="17.875" />
+        <EntityTypeShape EntityType="MultigymModel.MG_GiftCards" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Gym" Width="1.5" PointX="3" PointY="9" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Gym_Contacto" Width="1.5" PointX="5.25" PointY="24.375" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Gym_Disc" Width="1.5" PointX="8.25" PointY="9.625" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Gym_Serv" Width="1.5" PointX="5.25" PointY="7.625" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Pagos" Width="1.5" PointX="8.25" PointY="12.5" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Persona" Width="1.5" PointX="6" PointY="10.75" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Planes" Width="1.5" PointX="3.75" PointY="20" />
+        <EntityTypeShape EntityType="MultigymModel.mg_reviews" Width="1.5" PointX="11.25" PointY="12.375" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Servicios" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="MultigymModel.MG_TipoEntidad" Width="1.5" PointX="0.75" PointY="15.875" />
+        <EntityTypeShape EntityType="MultigymModel.MG_Visitas" Width="1.5" PointX="8.25" PointY="16.5" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Gym_Banco" />
         <AssociationConnector Association="MultigymModel.FK_MG_Gym_Ciudades" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Persona_Ciudad" />
         <AssociationConnector Association="MultigymModel.FK_MG_Gym_Disc" />
         <AssociationConnector Association="MultigymModel.FK_MG_Persona_Empresa" />
+        <AssociationConnector Association="MultigymModel.FK_Pago_FormaPago" />
         <AssociationConnector Association="MultigymModel.FK__mg_review__Id_Gy__619B8048" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Gym_Contacto" />
         <AssociationConnector Association="MultigymModel.FK_MG_Gym_Disc_Gym" />
         <AssociationConnector Association="MultigymModel.FK_MG_Gym_Serv_Gym" />
+        <AssociationConnector Association="MultigymModel.FK_MG_Gym_TipoEntidad" />
         <AssociationConnector Association="MultigymModel.FK_MG_Visitas_Gym" />
         <AssociationConnector Association="MultigymModel.FK_MG_Gym_Serv" />
         <AssociationConnector Association="MultigymModel.FK_MG_Pagos_Persona" />
-        <AssociationConnector Association="MultigymModel.FK__mg_review__Id_Pe__60A75C0F" />
         <AssociationConnector Association="MultigymModel.FK_MG_Persona_Planes" />
+        <AssociationConnector Association="MultigymModel.FK_Mg_Persona_Reviews" />
         <AssociationConnector Association="MultigymModel.FK_MG_Visitas_Persona" />
       </Diagram>
     </edmx:Diagrams>

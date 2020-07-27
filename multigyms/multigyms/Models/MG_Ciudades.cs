@@ -18,6 +18,7 @@ namespace multigyms.Models
         public MG_Ciudades()
         {
             this.MG_Gym = new HashSet<MG_Gym>();
+            this.MG_Persona = new HashSet<MG_Persona>();
         }
     
         public int Id_Ciudad { get; set; }
@@ -26,5 +27,7 @@ namespace multigyms.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MG_Gym> MG_Gym { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MG_Persona> MG_Persona { get; set; }
     }
 }

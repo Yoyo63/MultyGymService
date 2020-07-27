@@ -79,10 +79,22 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/23/2012 15:23:58</publishTime>
     </File>
     <File Include="bin/multigyms.dll">
-      <publishTime>01/21/2020 18:00:32</publishTime>
+      <publishTime>05/30/2020 17:24:21</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>03/08/2014 20:33:56</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Apple.dll">
+      <publishTime>07/04/2016 14:21:56</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Core.dll">
+      <publishTime>07/04/2016 14:21:56</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Google.dll">
+      <publishTime>07/04/2016 14:21:56</publishTime>
+    </File>
+    <File Include="bin/RestSharp.dll">
+      <publishTime>12/01/2020 10:02:42</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -120,6 +132,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
+    <File Include="bin/slnCC.NotificacionPush.dll">
+      <publishTime>05/27/2020 19:28:51</publishTime>
+    </File>
     <File Include="bin/SqlServerTypes/x64/msvcr120.dll">
       <publishTime>09/23/2019 20:27:14</publishTime>
     </File>
@@ -131,6 +146,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="bin/SqlServerTypes/x86/SqlServerSpatial140.dll">
       <publishTime>09/23/2019 20:27:14</publishTime>
+    </File>
+    <File Include="bin/System.Device.Portable.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>11/28/2018 13:00:36</publishTime>
@@ -169,10 +187,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/23/2019 20:17:59</publishTime>
     </File>
     <File Include="Models/mmultigym.edmx.diagram">
-      <publishTime>01/21/2020 16:48:34</publishTime>
+      <publishTime>05/27/2020 18:57:37</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/14/2019 16:18:37</publishTime>
+      <publishTime>04/30/2020 13:34:56</publishTime>
     </File>
     <File Include="scripts/ai.0.22.9-build00167.js">
       <publishTime>09/23/2019 20:18:08</publishTime>
@@ -199,7 +217,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/23/2019 20:17:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/20/2020 18:38:25</publishTime>
+      <publishTime>04/30/2020 14:00:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

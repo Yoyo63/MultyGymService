@@ -148,3 +148,11 @@ C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multi
 C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\obj\Release\multigyms.csprojResolveAssemblyReference.cache
 C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\obj\Release\multigyms.dll
 C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\obj\Release\multigyms.pdb
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\System.Device.Portable.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\slnCC.NotificacionPush.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\PushSharp.Google.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\PushSharp.Apple.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\PushSharp.Core.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\slnCC.NotificacionPush.pdb
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\RestSharp.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\multigyms\bin\RestSharp.xml

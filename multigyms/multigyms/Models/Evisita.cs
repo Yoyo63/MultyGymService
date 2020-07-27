@@ -7,6 +7,7 @@ namespace multigyms.Models
 {
     public class Evisita
     {
+        public int idvisita { get; set; }
         public int idusuario { get; set; }
         public int idgym { get; set; }
         public string nombregym { get; set; }

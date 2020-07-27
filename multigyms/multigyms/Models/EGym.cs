@@ -18,6 +18,7 @@ namespace multigyms.Models
         public string horariod { get; set; }
         public string lat { get; set; }
         public string lon { get; set; }
+        public string distancia { get; set; }
         public string reviewaverage { get; set; }
         public string reviewcount { get; set; }
         public List<EDisciplina> disciplinas { get; set; }

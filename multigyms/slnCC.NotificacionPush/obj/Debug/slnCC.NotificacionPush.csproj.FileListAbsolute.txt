@@ -1,0 +1,45 @@
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.dll.config
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.pdb
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\Newtonsoft.Json.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Amazon.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Apple.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Blackberry.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Core.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Firefox.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Google.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Windows.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\Newtonsoft.Json.xml
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.dll
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.pdb
+C:\Users\URIEL SOLIS\Desktop\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.csprojResolveAssemblyReference.cache
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.dll.config
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.pdb
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\Newtonsoft.Json.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Amazon.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Apple.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Blackberry.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Core.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Firefox.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Google.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\PushSharp.Windows.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\bin\Debug\Newtonsoft.Json.xml
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.dll
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.pdb
+C:\Users\URIEL SOLIS\Desktop\proyectos 2019\yaigo\Yaigo_Administrador\SS_DEV\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.csprojResolveAssemblyReference.cache
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.dll.config
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\slnCC.NotificacionPush.pdb
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\Newtonsoft.Json.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\PushSharp.Amazon.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\PushSharp.Apple.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\PushSharp.Blackberry.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\PushSharp.Core.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\PushSharp.Firefox.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\PushSharp.Google.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\PushSharp.Windows.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\bin\Debug\Newtonsoft.Json.xml
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.dll
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.pdb
+C:\Users\URIEL SOLIS\Documents\Visual Studio 2015\Projects\MultyGymService\multigyms\slnCC.NotificacionPush\obj\Debug\slnCC.NotificacionPush.csprojResolveAssemblyReference.cache

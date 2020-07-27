@@ -94,7 +94,6 @@ namespace multigyms.Controllers
                 return Ok(RespuestaApi<string>.createRespuestaError(ex.Message));
             }
         }
-
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/user/registro")]
         [HttpPost]

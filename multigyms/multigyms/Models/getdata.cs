@@ -19,5 +19,20 @@ namespace multigyms.Models
         public string email { get; set; }
         public int idplan { get; set; }
         public string nombregym { get; set; }
+
+        public string lat { get; set; }
+        public string lon { get; set; }
+        public int fcategoria { get; set; }
+        public int montoapagar { get; set; }
+        public int fdistancia { get; set; }
+        public int fcreditos { get; set; }
+        public int fcalificacion { get; set; }
+        public int fciudad { get; set; }
+        public string imei { get; set; }
+        public string pushid { get; set; }
+        public int tipoapp { get; set; }
+        public bool total { get; set; }
+        public DateTime fechainicio { get; set; }
+        public DateTime fechafin { get; set; }
     }
 }

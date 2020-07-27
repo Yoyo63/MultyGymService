@@ -14,7 +14,16 @@ namespace multigyms.Models
     
     public partial class MG_FormaPago
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MG_FormaPago()
+        {
+            this.MG_Pagos = new HashSet<MG_Pagos>();
+        }
+    
         public int Id { get; set; }
         public string Nombre { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MG_Pagos> MG_Pagos { get; set; }
     }
 }

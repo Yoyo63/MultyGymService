@@ -18,6 +18,7 @@ namespace multigyms.Models
         public MG_Gym()
         {
             this.mg_reviews = new HashSet<mg_reviews>();
+            this.MG_Gym_Contacto = new HashSet<MG_Gym_Contacto>();
             this.MG_Gym_Disc = new HashSet<MG_Gym_Disc>();
             this.MG_Gym_Serv = new HashSet<MG_Gym_Serv>();
             this.MG_Visitas = new HashSet<MG_Visitas>();
@@ -50,14 +51,26 @@ namespace multigyms.Models
         public string Passw { get; set; }
         public Nullable<int> ReviewCount { get; set; }
         public Nullable<decimal> ReviewAverage { get; set; }
+        public Nullable<int> Id_Banco { get; set; }
+        public string BcoCuenta { get; set; }
+        public string BcoCuentaHabiente { get; set; }
+        public string BcoCI { get; set; }
+        public string IMEI { get; set; }
+        public string PushID { get; set; }
+        public string CelTypeID { get; set; }
+        public Nullable<int> Id_TipoEntidad { get; set; }
     
+        public virtual MG_Bancos MG_Bancos { get; set; }
         public virtual MG_Ciudades MG_Ciudades { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<mg_reviews> mg_reviews { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MG_Gym_Contacto> MG_Gym_Contacto { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MG_Gym_Disc> MG_Gym_Disc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MG_Gym_Serv> MG_Gym_Serv { get; set; }
+        public virtual MG_TipoEntidad MG_TipoEntidad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MG_Visitas> MG_Visitas { get; set; }
     }

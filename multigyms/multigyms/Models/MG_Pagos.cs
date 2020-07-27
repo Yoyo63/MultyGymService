@@ -18,7 +18,9 @@ namespace multigyms.Models
         public int Id_persona { get; set; }
         public System.DateTime FecPago { get; set; }
         public short Monto { get; set; }
+        public Nullable<int> Id_FormaPago { get; set; }
     
+        public virtual MG_FormaPago MG_FormaPago { get; set; }
         public virtual MG_Persona MG_Persona { get; set; }
     }
 }

@@ -36,14 +36,19 @@ namespace multigyms.Models
         public Nullable<int> Id_empresa { get; set; }
         public bool Activo { get; set; }
         public string Token { get; set; }
-        public Nullable<int> Id_Familia { get; set; }
+        public Nullable<int> Id_Ciudad { get; set; }
+        public string Sexo { get; set; }
+        public string LastPushId { get; set; }
+        public string LastImei { get; set; }
+        public Nullable<int> LastTipoApp { get; set; }
     
+        public virtual MG_Ciudades MG_Ciudades { get; set; }
         public virtual MG_Empresa MG_Empresa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MG_Pagos> MG_Pagos { get; set; }
+        public virtual MG_Planes MG_Planes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<mg_reviews> mg_reviews { get; set; }
-        public virtual MG_Planes MG_Planes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MG_Visitas> MG_Visitas { get; set; }
     }

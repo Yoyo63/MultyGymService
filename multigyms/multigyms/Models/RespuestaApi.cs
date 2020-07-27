@@ -43,6 +43,7 @@ namespace multigyms.Models
             get;
             set;
         }
+
         public static RespuestaApi<T> createRespuestaError(string mensaje)
         {
             RespuestaApi<T> respuesta = new RespuestaApi<T>();
@@ -59,7 +60,6 @@ namespace multigyms.Models
             respuesta.Mensaje = mensaje;
             return respuesta;
         }
-
         public static RespuestaApi<T> createRespuestaError(string mensaje, string titulo)
         {
             RespuestaApi<T> respuesta = new RespuestaApi<T>();
@@ -76,7 +76,6 @@ namespace multigyms.Models
             respuesta.Mensaje = "Otro dispositivo ha iniciado sesión con este usuario, inicie sesión nuevamente para continuar.";
             return respuesta;
         }
-
         public static RespuestaApi<T> createRespuestaError(int codigo, string mensaje, string titulo = "")
         {
             RespuestaApi<T> respuesta = new RespuestaApi<T>();
@@ -85,7 +84,6 @@ namespace multigyms.Models
             respuesta.Mensaje = mensaje;
             return respuesta;
         }
-
         public static RespuestaApi<string> createRespuestaEncriptedSuccess(string mensaje, string data, string titulo = "")
         {
 
@@ -96,7 +94,6 @@ namespace multigyms.Models
             respuesta.Data = data;
             return respuesta;
         }
-
         public static RespuestaApi<T> createrespuestasuccess(string mensaje, string titulo = "")
         {
             RespuestaApi<T> respuesta = new RespuestaApi<T>();
@@ -105,7 +102,6 @@ namespace multigyms.Models
             respuesta.Mensaje = mensaje;
             return respuesta;
         }
-
         public static RespuestaApi<T> createrespuestasuccess(string mensaje, T data, string titulo = "")
         {
             RespuestaApi<T> respuesta = new RespuestaApi<T>();
@@ -115,7 +111,6 @@ namespace multigyms.Models
             respuesta.Data = data;
             return respuesta;
         }
-
         public static RespuestaApi<T> createRespuestaSuccess(T data, string titulo = "")
         {
             RespuestaApi<T> respuesta = new RespuestaApi<T>();
